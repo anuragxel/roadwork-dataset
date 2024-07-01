@@ -20,14 +20,14 @@ We suggest the following directory structure.
 
 ## Dataset Files
 
-### 1. `images.zip`
+1. `images.zip`
 - **Description:** Contains all the ROADWork images that have been manually annotated.
 - **Usage:** 
   - We suggest storing these images in scene/images/
   - Images collected by us (`<image_name>.jpg`) are formatted as `pgh<seq_id>_<frame_id>.jpg`
   - Images mined from Roadbotics data (`<image_name>.jpg`) are formatted as `<city_name>_<sequence_id>_<video_id>_<frame_id>.jpg`
 
-### 2. `annotations.zip`
+2. `annotations.zip`
 - **Description:** Contains instance segmentations, sign information, scene descriptions, and other labels for images in `images.zip` in a COCO-like format. It contains multiple splits, suited for different tasks.
 - **Usage:** 
   - The annotations follow an extension of the COCO format, please see [COCO](https://cocodataset.org/#format-data) for details.
@@ -38,7 +38,7 @@ We suggest the following directory structure.
     - `instances_<train/val>_pittsburgh_only.json`: Training images are from Pittsburgh Only, while the validation images include images from all the other cities (and NO Pittsburgh images).
     - `instances_geographic_da_{pretrain/unsupervised_with_gt/test}.json`: This is the split for geographic domain adaptation. Pretrain images labels can be used for training (and represent source domain images from Pittsburgh only). Unsupervised split contains images and labels from other cities but the labels should not be used for training if unsupervised domain adaptation is being evaluated. Test split contains images from the all cities (Pittsburgh and other cities) for evaluation only.
 
-### 3. `sem_seg_labels.zip`
+3. `sem_seg_labels.zip`
 - **Description:** Contains semantic segmentation labels for images in `images.zip` in the Cityscapes format.
 - **Usage:**
   - They are named in the same format as images/ and stored in scene/gtFine/ folder.
@@ -49,11 +49,11 @@ We suggest the following directory structure.
     - `<image_name>_Ids.png`
   - 
 
-### 4. `discovered_images.zip`
+4. `discovered_images.zip`
 - **Description:** Contains discovered images with roadwork scenes from BDD100K and Mapillary dataset (less than 1000 images in total). These images are provided for ease of access ONLY.
 - **Usage:** Utilize these images for auxiliary tasks or comparative analysis. Note the specific license information for these external datasets.
 
-### 5. `traj_images.zip`
+5. `traj_images.zip`
 - **Description:** Contains images associated with pathways. These images were manually filtered to contain ground truth pathways obtained from COLMAP. The split is described in the Usage section to avoid data contamination from models trained on `images.zip`.
 - **Usage:** 
   - Format: `<city_name>_<sequence_id>_<video_id>_<frame_id>_<relative_frame_id>.jpg`
@@ -61,23 +61,23 @@ We suggest the following directory structure.
   - The `frame_id` corresponds to the 15th second of the 30 second snippet that was extracted (thus it is the 75th frame of the sequence).
   - The pathways for all these images were manually verified.
 
-### 6. `traj_annotations.zip`
+6. `traj_annotations.zip`
 - **Description:** Contains pathway annotations corresponding to images in `traj_images.zip`.
 - **Usage:** 
   - Pair these annotations with `traj_images.zip`.
   - Split is following the "GPS SPLIT".
 
-### 7. `traj_images_dense.zip`
+7. `traj_images_dense.zip`
 - **Description:** Contains a dense set of images with associated pathways. These are similar to `traj_images.zip` but are not subsampled.
 - **Usage:** Same as `traj_images.zip`.
   - The snippets were sampled at 5 FPS, so a total of 150 frames were sampled for 3D reconstruction.
   - Pathway images _temporally between_ two or more verified images from `traj_images.zip` all sampled to provide 5 FPS pathway sequences longer than 10 frames.
 
-### 8. `traj_annotations_dense.zip`
+9. `traj_annotations_dense.zip`
 - **Description:** Contains pathway annotations corresponding to images in `traj_images_dense.zip`.
 - **Usage:** Same as `traj_annotations.zip`.
 
-### 9. `videos_compressed.zip`
+10. `videos_compressed.zip`
 - **Description:** Contains video snippets from the Robotics Open Dataset that were used to compute 3D reconstructions and then pathways using COLMAP.
 - **Usage:** 
   - Please also download videos_compressed.z{00..07} to unzip this file.
@@ -85,9 +85,21 @@ We suggest the following directory structure.
 
 ## Scripts
 
-### 1. instance-visualize.ipynb
--- **Description:** Visualizes instance segmentation ground truth and model trained on ROADWork data.
+Example scripts showing how to use the dataset and run the models.
 
+1. instance-visualize.ipynb
+-- **Description:** Visualizes instance segmentation ground truth and model trained on ROADWork dataset.
+-- **Notes:** We use [mmdetection](https://github.com/open-mmlab/mmdetection) to train our models. Dataloader is provided in the notebook.
+
+2. segm-visualize.ipynb
+-- **Desciption:** Visualizes semantic segmentation ground truth and model trained on ROADWork dataset.
+-- **Notes:** We use [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch) to train our models. Dataloader is provided in the notebook.
+
+3. description-visualize.ipynb
+-- **Desciption:** Visualizes description ground truth and LLaVA LORA model trained on ROADWork dataset. Dataloader is provided in the notebook.
+
+4. pathways-visualize.ipynb
+-- **Desciption:** Visualizes pathways ground truth and model trained on ROADWork dataset. Dataloader is provided in the notebook.
 
 
 ## License Information
