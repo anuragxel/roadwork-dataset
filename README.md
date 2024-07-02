@@ -94,9 +94,12 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
   - Please also download videos_compressed.z{00..07} to unzip this file.
   - Format: `<city_name>_<sequence_id>_<video_id>_<frame_id>.mp4`
 
-## Scripts
+## Scripts and Models
 
-Example scripts showing how to use the dataset and run the models. We have provided an `environment.yaml` to create a conda environment for running these models.
+Example scripts in the form of Jupyter Notebooks showing how to use the dataset and run the models and visualize the results. We have provided an `environment.yaml` to create a conda environment for running these models (except for `description-visualize.ipynb`).
+
+`explore-roadwork-data.ipynb`
+- **Description:** Visualizes and Explores ROADWork dataset and show simple usecases.
 
 `instance-visualize.ipynb`
 - **Description:** Visualizes instance segmentation ground truth and model trained on ROADWork dataset.
@@ -106,11 +109,23 @@ Example scripts showing how to use the dataset and run the models. We have provi
 - **Desciption:** Visualizes semantic segmentation ground truth and model trained on ROADWork dataset.
 - **Notes:** We use [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch) to train our models. Dataloader is provided in the notebook.
 
-`description-visualize.ipynb`
-- **Desciption:** Visualizes description ground truth and LLaVA LORA model trained on ROADWork dataset. Dataloader is provided in the notebook.
-
 `pathways-visualize.ipynb`
 - **Desciption:** Visualizes pathways ground truth and model trained on ROADWork dataset. Dataloader is provided in the notebook.
+
+`description-visualize.ipynb`
+- **Desciption:** Visualizes description ground truth and LLaVA LORA model trained on ROADWork dataset. Dataloader is provided in the notebook.
+- **Usage:** LLaVA is a large package so we don't include it in our repository.
+  - Install LLaVA 
+    - Clone LLaVA `git clone https://github.com/haotian-liu/LLaVA.git` inside misc/ folder
+    - Checkout LLaVA code version v1.1.3 `git checkout tags/v1.1.3`
+    - Follow the installation process from `README.md` and create a `llava` environment.
+  - Download the LLaVA-1.5-7B model
+    - Install git-lfs `sudo apt-get install git-lfs`
+    - In `models\llava_scene_description\` download the model by
+      - `git-lfs install` or `git lfs install` 
+      - `git clone https://huggingface.co/liuhaotian/llava-v1.5-7b`
+      - or `git clone git@hf.co:liuhaotian/llava-v1.5-7b`
+  - 
 
 ## License Information
 
