@@ -1,4 +1,5 @@
-# ROADWork Dataset
+![ROADWork Dataset](./images/banner.png)
+
 
 Please visit [ROADWork Dataset](https://www.cs.cmu.edu/~ILIM/roadwork_dataset/) for information about our dataset.
 
