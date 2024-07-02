@@ -2,6 +2,8 @@
 
 Please visit [ROADWork Dataset](https://www.cs.cmu.edu/~ILIM/roadwork_dataset/) for information about our dataset.
 
+![ROADWork Dataset Examples](./images/dataset-desc.webp)
+
 This dataset contains various annotated images and videos related to roadwork scenes. The data is organized into multiple zip files, and the zip files can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197). Below you will find a detailed description of each file and instructions for their usage.
 
 ## Directory structure
@@ -42,22 +44,22 @@ We suggest the following directory structure.
     - `instances_<train/val>_gps_split.json`: Both train and val have images from all the cities, but they have been split to ensure none of the images in the split are within 100m of each other.
     - `instances_<train/val>_gps_split_with_signs.json`: Same as above but the class vocabulary is expanded to include rare sign information.
     - `instances_<train/val>_pittsburgh_only.json`: Training images are from Pittsburgh Only, while the validation images include images from all the other cities (and NO Pittsburgh images).
-    - `instances_geographic_da_{pretrain/unsupervised_with_gt/test}.json`: This is the split for geographic domain adaptation. Pretrain images labels can be used for training (and represent source domain images from Pittsburgh only). Unsupervised split contains images and labels from other cities but the labels should not be used for training if unsupervised domain adaptation is being evaluated. Test split contains images from the all cities (Pittsburgh and other cities) for evaluation only.
+    - `instances_geographic_da_{pretrain/unsupervised_with_gt/test}.json`: This is the split to be used for geographic domain adaptation. Pretrain images labels can be used for training (and represent source domain images from Pittsburgh only). Unsupervised split contains images and labels from other cities but the labels should not be used for training if unsupervised domain adaptation is being evaluated. Test split contains images from the all cities (Pittsburgh and other cities) for evaluation only.
 
 `sem_seg_labels.zip`
 - **Description:** Contains semantic segmentation labels for images in `images.zip` in the Cityscapes format.
 - **Usage:**
   - They are named in the same format as images/ and stored in scene/gtFine/ folder.
-  - The split is the same as the "gps_split" mentioned earlier.
+  - The split is the same as `gps_split` mentioned earlier.
   - For each image, three files have been generated following the CityScapes format
     - `<image_name>_labelColors.png`
     - `<image_name>_labelIds.png`
     - `<image_name>_Ids.png`
-  - 
+  - `segm-visualize.ipynb` has the code snippet for setting up the images symlinks.
 
 `discovered_images.zip`
 - **Description:** Contains discovered images with roadwork scenes from BDD100K and Mapillary dataset (less than 1000 images in total). These images are provided for ease of access ONLY.
-- **Usage:** Utilize these images for auxiliary tasks or comparative analysis. Note the specific license information for these external datasets.
+- **Usage:** Utilize these images for auxiliary tasks. Note the specific license information for these external datasets.
 
 `traj_images.zip`
 - **Description:** Contains images associated with pathways. These images were manually filtered to contain ground truth pathways obtained from COLMAP. The split is the same `gps_split` to avoid data contamination from models trained on `images.zip`.
@@ -71,7 +73,7 @@ We suggest the following directory structure.
 - **Description:** Contains pathway annotations corresponding to images in `traj_images.zip`.
 - **Usage:** 
   - Pair these annotations with `traj_images.zip`.
-  - Split is following the "GPS SPLIT".
+  - Split is following the "gps_split" described above.
 
 `traj_images_dense.zip`
 - **Description:** Contains a dense set of images with associated pathways. These are similar to `traj_images.zip` but are not subsampled.
@@ -106,7 +108,6 @@ Example scripts showing how to use the dataset and run the models. We have provi
 
 `pathways-visualize.ipynb`
 - **Desciption:** Visualizes pathways ground truth and model trained on ROADWork dataset. Dataloader is provided in the notebook.
-
 
 ## License Information
 
