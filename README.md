@@ -13,10 +13,14 @@ We suggest the following directory structure.
 │   └── images
 ├── scene
 │   ├── annotations
-│   ├── gtFine
-│   │   ├── train
-│   │   └── val
-│   └── images
+│   ├── images
+│   └── sem_seg
+│       ├── gtFine
+│       │   ├── train
+│       │   └── val
+│       └── images
+│           ├── train
+│           └── val
 └── videos
 ```
 
@@ -44,7 +48,7 @@ We suggest the following directory structure.
 - **Description:** Contains semantic segmentation labels for images in `images.zip` in the Cityscapes format.
 - **Usage:**
   - They are named in the same format as images/ and stored in scene/gtFine/ folder.
-  - The split is the same as the "GPS SPLIT" mentioned earlier.
+  - The split is the same as the "gps_split" mentioned earlier.
   - For each image, three files have been generated following the CityScapes format
     - `<image_name>_labelColors.png`
     - `<image_name>_labelIds.png`
@@ -56,7 +60,7 @@ We suggest the following directory structure.
 - **Usage:** Utilize these images for auxiliary tasks or comparative analysis. Note the specific license information for these external datasets.
 
 `traj_images.zip`
-- **Description:** Contains images associated with pathways. These images were manually filtered to contain ground truth pathways obtained from COLMAP. The split is described in the Usage section to avoid data contamination from models trained on `images.zip`.
+- **Description:** Contains images associated with pathways. These images were manually filtered to contain ground truth pathways obtained from COLMAP. The split is the same `gps_split` to avoid data contamination from models trained on `images.zip`.
 - **Usage:** 
   - Format: `<city_name>_<sequence_id>_<video_id>_<frame_id>_<relative_frame_id>.jpg`
   - The snippets were sampled at 5 FPS, so a total of 150 frames were sampled for 3D reconstruction (which is the `<relative_frame_id>`).
@@ -87,7 +91,7 @@ We suggest the following directory structure.
 
 ## Scripts
 
-Example scripts showing how to use the dataset and run the models.
+Example scripts showing how to use the dataset and run the models. We have provided an `environment.yaml` to create a conda environment for running these models.
 
 `instance-visualize.ipynb`
 - **Description:** Visualizes instance segmentation ground truth and model trained on ROADWork dataset.
