@@ -2,7 +2,7 @@
 
 Please visit [ROADWork Dataset](https://www.cs.cmu.edu/~ILIM/roadwork_dataset/) for information about our dataset.
 
-![ROADWork Dataset Examples](./images/dataset-desc.webp)
+![ROADWork Dataset Examples](./images/dataset-desc.jpg)
 
 This dataset contains various annotated images and videos related to roadwork scenes. The data is organized into multiple zip files, and the zip files can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197). Below you will find a detailed description of each file and instructions for their usage.
 
