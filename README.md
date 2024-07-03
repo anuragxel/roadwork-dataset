@@ -137,11 +137,12 @@ Example scripts are provided as Jupyter Notebooks showing how to use the dataset
   - `cd misc/LLaVA/scripts/`
   - `python merge_lora_weights.py --model-path ../../../models/llava_scene_description/llava_lora/captions-workzone-llava-v1.5-7b-lora --model-base ../../../models/llava_scene_description/llava-v1.5-7b --save-model-path ../../../models/llava_scene_description/llava-with-context-workzone/`
 
+`explore-roadwork-data.ipynb`
+- **Desciption:** Visualizes semantic segmentation ground truth and model trained on ROADWork dataset.
+
 ## Coming Soon
 
-- `explore-roadwork-data.ipynb`: Visualizes and Explores ROADWork dataset and show simple usecases.
 - Scripts to compute all the metrics easily.
-- Easier Visualization scripts.
 
 ## License Information
 
