@@ -1,9 +1,10 @@
 ![ROADWork Dataset](./images/banner.png)
 
+---
 
 Please visit [ROADWork Dataset](https://www.cs.cmu.edu/~ILIM/roadwork_dataset/) for information about our dataset.
 
-This dataset contains various annotated images and videos related to roadwork scenes. The data is organized into multiple zip files, and the zip files can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197). Below you will find a detailed description of each file and instructions for their usage.
+This dataset contains various annotated images and videos related to roadwork scenes. The data is organized into multiple zip files, and the zip files can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197). Baseline models can be downloaded from [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing).
 
 ![ROADWork Dataset Examples](./images/dataset-desc.jpg)
 
@@ -29,7 +30,7 @@ We suggest the following directory structure.
 
 ## Dataset Files
 
-Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197).
+Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197) and is divided into many zip files. We provide brief description of each zip file here.
 
 `images.zip`
 - **Description:** Contains all the ROADWork images that have been manually annotated.
@@ -96,9 +97,9 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
 
 ## Scripts and Models
 
-Baseline Models are provided at this [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing) link.
+Baseline Models are provided at this [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing) link. Unzip `roadwork_baseline_models.zip` in the base directory and place all models in the `./models/` directory.
 
-Example scripts in the form of Jupyter Notebooks showing how to use the dataset and run the models and visualize the results. We have provided an `environment.yaml` to create a conda environment for running these models (except for `description-visualize.ipynb`).
+Example scripts are provided as Jupyter Notebooks showing how to use the dataset, run the models and visualize the results. We have provided an `environment.yaml` to create a conda environment for running these models. For `description-visualize.ipynb`, we instead provide `llava_environment.yaml` but suggest following the steps mentioned below.
 
 `explore-roadwork-data.ipynb`
 - **Description:** Visualizes and Explores ROADWork dataset and show simple usecases.
@@ -120,16 +121,21 @@ Example scripts in the form of Jupyter Notebooks showing how to use the dataset 
   - Install LLaVA. 
     - Clone LLaVA `git clone https://github.com/haotian-liu/LLaVA.git` inside misc/ folder
     - Checkout LLaVA code version v1.1.3 `git checkout tags/v1.1.3`
-    - Follow the installation process from `README.md` and create a `llava` environment.
+    - Follow the installation process from `README.md` and create a `llava` conda environment.
   - Download the LLaVA-1.5-7B model.
     - Install git-lfs `sudo apt-get install git-lfs`
-    - In `models\llava_scene_description\` download the model by
+    - In `./models/llava_scene_description/` download the model by
       - `git-lfs install` or `git lfs install` 
       - `git clone https://huggingface.co/liuhaotian/llava-v1.5-7b`
       - or `git clone git@hf.co:liuhaotian/llava-v1.5-7b`
 - **Optional**: Merge LORA's with the LLaVA-1.5-7B model. 
   - `cd misc/LLaVA/scripts/`
   - `python merge_lora_weights.py --model-path ../../../models/llava_scene_description/llava_lora/captions-workzone-llava-v1.5-7b-lora --model-base ../../../models/llava_scene_description/llava-v1.5-7b --save-model-path ../../../models/llava_scene_description/llava-with-context-workzone/`
+
+## Coming Soon
+
+- Scripts to compute all the metrics easily.
+- Easier Visualization scripts.
 
 ## License Information
 
