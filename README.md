@@ -34,13 +34,14 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
 
 `images.zip`
 - **Description:** Contains all the ROADWork images that have been manually annotated.
+- Unzip in `/scene/`.
 - **Usage:** 
-  - We suggest storing these images in scene/images/
   - Images collected by us (`<image_name>.jpg`) are formatted as `pgh<seq_id>_<frame_id>.jpg`
   - Images mined from Roadbotics data (`<image_name>.jpg`) are formatted as `<city_name>_<sequence_id>_<video_id>_<frame_id>.jpg`
 
 `annotations.zip`
 - **Description:** Contains instance segmentations, sign information, scene descriptions, and other labels for images in `images.zip` in a COCO-like format. It contains multiple splits, suited for different tasks.
+- Unzip in `/scene/`.
 - **Usage:** 
   - The annotations follow an extension of the COCO format, please see [COCO](https://cocodataset.org/#format-data) for details.
   - Image level attributes are stored in `image` struct while additional object level attributes are stored in `annotation` struct in the JSON files.
@@ -52,6 +53,7 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
 
 `sem_seg_labels.zip`
 - **Description:** Contains semantic segmentation labels for images in `images.zip` in the Cityscapes format.
+- Unzip in `/scene/sem_seg`.
 - **Usage:**
   - They are named in the same format as images/ and stored in scene/gtFine/ folder.
   - The split is the same as `gps_split` mentioned earlier.
@@ -63,10 +65,12 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
 
 `discovered_images.zip`
 - **Description:** Contains discovered images with roadwork scenes from BDD100K and Mapillary dataset (less than 1000 images in total). These images are provided for ease of access ONLY.
+- Unzip in `/discovered/`.
 - **Usage:** Utilize these images for auxiliary tasks. Note the specific license information for these external datasets.
 
 `traj_images.zip`
 - **Description:** Contains images associated with pathways. These images were manually filtered to contain ground truth pathways obtained from COLMAP. The split is the same `gps_split` to avoid data contamination from models trained on `images.zip`.
+- Unzip in `/pathways/`.
 - **Usage:** 
   - Format: `<city_name>_<sequence_id>_<video_id>_<frame_id>_<relative_frame_id>.jpg`
   - The snippets were sampled at 5 FPS, so a total of 150 frames were sampled for 3D reconstruction (which is the `<relative_frame_id>`).
@@ -75,22 +79,26 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
 
 `traj_annotations.zip`
 - **Description:** Contains pathway annotations corresponding to images in `traj_images.zip`.
+- Unzip in `/pathways/`.
 - **Usage:** 
   - Pair these annotations with `traj_images.zip`.
   - Split is following the "gps_split" described above.
 
 `traj_images_dense.zip`
 - **Description:** Contains a dense set of images with associated pathways. These are similar to `traj_images.zip` but are not subsampled.
+- Unzip in `/pathways_dense/`.
 - **Usage:** Same as `traj_images.zip`.
   - The snippets were sampled at 5 FPS, so a total of 150 frames were sampled for 3D reconstruction.
   - Pathway images _temporally between_ two or more verified images from `traj_images.zip` all sampled to provide 5 FPS pathway sequences longer than 10 frames.
 
 `traj_annotations_dense.zip`
 - **Description:** Contains pathway annotations corresponding to images in `traj_images_dense.zip`.
+- Unzip in `/pathways_dense/`.
 - **Usage:** Same as `traj_annotations.zip`.
 
 `videos_compressed.zip`
 - **Description:** Contains video snippets from the Robotics Open Dataset that were used to compute 3D reconstructions and then pathways using COLMAP.
+- Unzip in `/videos/`.
 - **Usage:** 
   - Please also download videos_compressed.z{00..07} to unzip this file.
   - Format: `<city_name>_<sequence_id>_<video_id>_<frame_id>.mp4`
