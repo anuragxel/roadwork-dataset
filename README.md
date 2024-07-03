@@ -101,9 +101,6 @@ Baseline Models are provided at this [Google Drive](https://drive.google.com/fil
 
 Example scripts are provided as Jupyter Notebooks showing how to use the dataset, run the models and visualize the results. We have provided an `environment.yaml` to create a conda environment for running these models. For `description-visualize.ipynb`, we instead provide `llava_environment.yaml` but suggest following the steps mentioned below.
 
-`explore-roadwork-data.ipynb`
-- **Description:** Visualizes and Explores ROADWork dataset and show simple usecases.
-
 `instance-visualize.ipynb`
 - **Description:** Visualizes instance segmentation ground truth and model trained on ROADWork dataset.
 - **Notes:** We use [mmdetection](https://github.com/open-mmlab/mmdetection) to train our models. Dataloader is provided in the notebook.
@@ -134,6 +131,7 @@ Example scripts are provided as Jupyter Notebooks showing how to use the dataset
 
 ## Coming Soon
 
+- `explore-roadwork-data.ipynb`: Visualizes and Explores ROADWork dataset and show simple usecases.
 - Scripts to compute all the metrics easily.
 - Easier Visualization scripts.
 
