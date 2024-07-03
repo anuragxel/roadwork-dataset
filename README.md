@@ -96,6 +96,8 @@ Dataset can be downloaded from [CMU Kilthub](https://doi.org/10.1184/R1/26093197
 
 ## Scripts and Models
 
+Baseline Models are provided at this [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing) link.
+
 Example scripts in the form of Jupyter Notebooks showing how to use the dataset and run the models and visualize the results. We have provided an `environment.yaml` to create a conda environment for running these models (except for `description-visualize.ipynb`).
 
 `explore-roadwork-data.ipynb`
@@ -115,21 +117,25 @@ Example scripts in the form of Jupyter Notebooks showing how to use the dataset 
 `description-visualize.ipynb`
 - **Desciption:** Visualizes description ground truth and LLaVA LORA model trained on ROADWork dataset. Dataloader is provided in the notebook.
 - **Usage:** LLaVA is a large package so we don't include it in our repository.
-  - Install LLaVA 
+  - Install LLaVA. 
     - Clone LLaVA `git clone https://github.com/haotian-liu/LLaVA.git` inside misc/ folder
     - Checkout LLaVA code version v1.1.3 `git checkout tags/v1.1.3`
     - Follow the installation process from `README.md` and create a `llava` environment.
-  - Download the LLaVA-1.5-7B model
+  - Download the LLaVA-1.5-7B model.
     - Install git-lfs `sudo apt-get install git-lfs`
     - In `models\llava_scene_description\` download the model by
       - `git-lfs install` or `git lfs install` 
       - `git clone https://huggingface.co/liuhaotian/llava-v1.5-7b`
       - or `git clone git@hf.co:liuhaotian/llava-v1.5-7b`
-  - 
+- **Optional**: Merge LORA's with the LLaVA-1.5-7B model. 
+  - `cd misc/LLaVA/scripts/`
+  - `python merge_lora_weights.py --model-path ../../../models/llava_scene_description/llava_lora/captions-workzone-llava-v1.5-7b-lora --model-base ../../../models/llava_scene_description/llava-v1.5-7b --save-model-path ../../../models/llava_scene_description/llava-with-context-workzone/`
 
 ## License Information
 
-Please note that the `discovered_images.zip` file contains images from the BDD100K and Mapillary datasets, which are subject to their respective licenses. Ensure compliance with these licenses when using these images.
+Code is licensed under MIT license. ROADWork Dataset is Licensed under [Open Data Commons Attribution License v1.0](https://opendatacommons.org/licenses/by/1-0/).
+
+Note that `discovered_images.zip` file contains images from the BDD100K and Mapillary datasets, which are subject to their respective licenses. Ensure compliance with these licenses when using these images.
 
 ## Citation
 
