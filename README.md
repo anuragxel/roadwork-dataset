@@ -155,11 +155,11 @@ Note that `discovered_images.zip` file contains images from the BDD100K and Mapi
 If you use this dataset in your research, please cite:
 
 ```
-@article{ghosh2024roadwork,
-  title={ROADWork Dataset: Learning to Recognize, Observe, Analyze and Drive Through Work Zones},
-  author={Ghosh, Anurag and Tamburo, Robert and Zheng, Shen and Alvarez-Padilla, Juan R and Zhu, Hailiang and Cardei, Michael and Dunn, Nicholas and Mertz, Christoph and Narasimhan, Srinivasa G},
-  journal={arXiv preprint arXiv:2406.07661},
-  year={2024}
+@InProceedings{ghosh2025roadwork,
+  title={ROADWork: A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones},
+  author={Ghosh, Anurag and Zheng, Shen and Tamburo, Robert and Vuong, Khiem and Alvarez-Padilla, Juan and Zhu, Hailiang and Cardei, Michael and Dunn, Nicholas and Mertz, Christoph and Narasimhan, Srinivasa G},
+  booktitle = {ICCV},
+  year      = {2025}
 }
 ```
 
