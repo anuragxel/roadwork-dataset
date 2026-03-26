@@ -4,7 +4,7 @@
 
 <div align="center">
 
-# [ICCV 2025] ROADWork dataset: <br> A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones
+# [ICCV 2025] ROADWork: <br> A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones
 
 [Anurag Ghosh](https://anuragxel.github.io/), [Shen Zheng](https://shenzheng2000.github.io/), [Robert Tamburo](https://www.ri.cmu.edu/ri-people/robert-joseph-tamburo/), [Khiem Vuong](https://www.khiemvuong.com/), [Juan Alvarez-Padilla](https://juanalvarezpadilla.com/),
 [Hailiang Zhu](https://zhuhl0913.github.io/), [Michael Cardei](https://michaelcardei.github.io/), [Nicholas Dunn](https://www.linkedin.com/in/nicholas-dunn-3997011bb), [Christoph Mertz](https://www.ri.cmu.edu/ri-people/christoph-mertz/) and [Srinivasa Narasimhan](https://www.cs.cmu.edu/~srinivas/)
@@ -29,7 +29,7 @@ ROADWork is a large-scale open-source dataset and benchmark with fine-grained an
 
 The dataset contains **4,375 videos, 9,650 fully annotated images**, and **129K path-annotated images**, covering 15 object categories and 360 unique roadwork signs across 18 U.S. cities, with additional in-the-wild images from around the world.
 
-* Dataset download: [CMU KiltHub](https://doi.org/10.1184/R1/26093197)
+* Dataset: [CMU KiltHub](https://doi.org/10.1184/R1/26093197)
 * Baseline models: [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing)
 
 <br>
@@ -52,7 +52,7 @@ The dataset contains **4,375 videos, 9,650 fully annotated images**, and **129K 
 
 ## 📂 Directory Structure
 
-The dataset is organized as follows:
+The dataset is organized as follows (after extraction):
 ```
 ├── pathways
 │   ├── annotations
@@ -305,7 +305,7 @@ If you use this dataset in your research, please cite the following:
 
 ## 🤝 Contact
 
-For questions or support, please contact [Anurag Ghosh](https://anuragxel.github.io).
+For questions or support, please open an issue or contact [Anurag Ghosh](https://anuragxel.github.io).
 
 <!-- Thank you for using the ROADWork dataset. We hope it contributes significantly to your research and development projects. -->
 
