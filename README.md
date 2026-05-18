@@ -205,8 +205,6 @@ The dataset is available on [CMU KiltHub](https://doi.org/10.1184/R1/26093197) a
 
 </details>
 
-
-
 ## 🤖 Models
 
 <!-- Baseline Models are provided at this [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing) link. Unzip `roadwork_baseline_models.zip` in the base directory and place all models in the `./models/` directory.
@@ -281,6 +279,23 @@ We also provide a set of Jupyter notebooks for visualizing annotations and runni
 
 </details>
 
+## ROADWork-But-German-Annotations
+
+Sebastian Wullrich has helpfully provided us with re-annotated ROADWork dataset with German object annotations which can be useful for studying out-of-domain detection. 
+They are provided as-is here: [Hugging Face Link](https://huggingface.co/datasets/anuragxel/roadwork-dataset/tree/main/german)
+
+We have also provided their AutoNOMOS dataset containing work zone images from Germany for ease-of-access.
+
+If you use any of the AutoNOMOS datasets (including ROADWork-But-German-Annotations) in your research, please cite the following:
+```
+@article{wullrich2026deep,
+  title={Deep Neural Network Based Roadwork Detection for Autonomous Driving},
+  author={Wullrich, Sebastian and Steinke, Nicolai and Goehring, Daniel},
+  journal={arXiv preprint arXiv:2604.02282},
+  year={2026}
+}
+```
+
 <!-- ## Coming Soon
 
 - Scripts to compute all the metrics easily. -->
@@ -291,9 +306,11 @@ The code is licensed under the MIT License. The ROADWork dataset is licensed und
 
 Note that `discovered_images.zip` contains images from the BDD100K and Mapillary datasets, which are subject to their respective licenses. Please ensure compliance when using these images.
 
+The ROADWork-But-German Dataset Annotations (excluding ROADWork images) and AutoNOMOS Labs Dataset are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
+
 ## ✍️ Citation
 
-If you use this dataset in your research, please cite the following:
+If you use the ROADWork dataset in your research, please cite the following:
 
 ```
 @inproceedings{ghosh2025roadwork,
