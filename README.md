@@ -30,6 +30,7 @@ ROADWork is a large-scale open-source dataset and benchmark with fine-grained an
 The dataset contains **4,375 videos, 9,650 fully annotated images**, and **129K path-annotated images**, covering 15 object categories and 360 unique roadwork signs across 18 U.S. cities, with additional in-the-wild images from around the world.
 
 * Dataset: [CMU KiltHub](https://doi.org/10.1184/R1/26093197)
+* Alternative Link [HuggingFace](https://huggingface.co/datasets/anuragxel/roadwork-dataset)
 * Baseline models: [Google Drive](https://drive.google.com/file/d/1FbmIt24FfGu4kKMMp-IZUqS-jHt3Rshx/view?usp=sharing)
 
 <br>
