@@ -281,6 +281,7 @@ We also provide a set of Jupyter notebooks for visualizing annotations and runni
 
 ## ROADWork-But-German-Annotations
 
+<details>
 Sebastian Wullrich has helpfully provided us with re-annotated ROADWork dataset with German object annotations which can be useful for studying out-of-domain detection. 
 They are provided as-is here: [Hugging Face Link](https://huggingface.co/datasets/anuragxel/roadwork-dataset/tree/main/german)
 
@@ -295,6 +296,7 @@ If you use any of the AutoNOMOS datasets (including ROADWork-But-German-Annotati
   year={2026}
 }
 ```
+</details>
 
 <!-- ## Coming Soon
 
