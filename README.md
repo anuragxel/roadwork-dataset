@@ -298,6 +298,8 @@ Please cite both the original ROADWork dataset and the following work when using
   year={2026}
 }
 ```
+
+The ROADWork-But-German Dataset Annotations (excluding ROADWork images) and AutoNOMOS Labs Dataset are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
 </details>
 
 <!-- ## Coming Soon
