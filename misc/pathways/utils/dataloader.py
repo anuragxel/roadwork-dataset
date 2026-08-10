@@ -3,6 +3,9 @@ from tqdm import tqdm
 import numpy as np
 import torch
 
+# Placeholder for camera extrinsics for the roadworks dataset (update when available)
+CAMERA_EXTRINSICS = np.eye(4)
+
 class SceneDataset(Dataset):
 	def __init__(self, data, resize, total_len):
 		""" Dataset that contains the trajectories of one scene as one element in the list. It doesn't contain the
